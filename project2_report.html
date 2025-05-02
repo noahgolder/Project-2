@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Project 2 Report</title>
+    <style>
+      :root {
+        --color-neutral-95: hsl(220 10% 95%);
+        --color-neutral-90: hsl(220 10% 90%);
+        --color-neutral-80: hsl(220 10% 80%);
+        --color-neutral-70: hsl(220 10% 70%);
+        --color-neutral-60: hsl(220 10% 60%);
+        --color-neutral-50: hsl(220 10% 50%);
+        --color-neutral-40: hsl(220 10% 40%);
+        --color-neutral-30: hsl(220 10% 30%);
+        --color-neutral-20: hsl(220 10% 20%);
+        --color-neutral-10: hsl(220 10% 10%);
+      }
+
+      html {
+        font: 100%/1.5 system-ui;
+        counter-reset: figure;
+        background: var(--color-neutral-95);
+        max-width: min(75vw, 80em);
+        margin: 0 auto;
+      }
+
+      /* Headings */
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        line-height: 1.1;
+        font-weight: 600;
+        text-wrap: balance;
+      }
+
+      figure img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin-inline: auto;
+      }
+
+
+      h1,
+      h2 {
+        border-bottom: 1px solid var(--color-neutral-80);
+        padding-bottom: 0.2em;
+      }
+
+      h1 {
+        margin-block: 1em 0.5rem;
+        font-size: clamp(2.5em, 150% + 2vh + 2vw, 10vmin);
+        font-weight: 800;
+
+        small {
+          display: block;
+          width: fit-content;
+          padding: 0.2em 0.5em;
+          margin-inline: auto;
+          color: white;
+          background: var(--color-neutral-40);
+          font-size: 40%;
+          text-transform: uppercase;
+          white-space: nowrap;
+        }
+      }
+
+      h2 {
+        font-size: 180%;
+        color: var(--color-neutral-30);
+      }
+
+      h3 {
+        font-size: 130%;
+      }
+
+      /* Lists */
+
+      ul,
+      ol {
+        padding-inline-start: 2em;
+      }
+
+      li {
+        &::marker {
+          color: var(--color-neutral-40);
+        }
+
+        + li {
+          margin-top: 0.2em;
+        }
+      }
+
+      /* Sectioning elements */
+
+      header {
+        padding-block: 1em;
+        text-align: center;
+      }
+
+      main {
+        background: white;
+        color: var(--color-neutral-20);
+        border-radius: 1rem;
+        padding: 0.1rem 2rem;
+      }
+
+      /* Figures */
+
+      figure {
+        margin: 1em 0;
+        padding: 0.5rem;
+        margin-inline: -0.5em;
+        border: 1px solid var(--color-neutral-80);
+        box-shadow: 0 0.1em 0.2em var(--color-neutral-95);
+        text-align: center;
+        background: white;
+
+        > figcaption {
+          font: 500 75% var(--font-sans);
+          background: var(--color-neutral-95);
+          padding: 0.5rem;
+          margin: -0.5rem;
+          margin-top: 0.5rem;
+          counter-increment: figure;
+          text-align: left;
+
+          &::before {
+            content: 'Figure ' counter(figure) ': ';
+            font-weight: bold;
+            color: var(--color-neutral-40);
+          }
+
+          a:not(:hover, :focus, :active) {
+            color: inherit;
+            text-decoration: underline;
+            text-decoration-color: color-mix(
+              in lab,
+              currentColor,
+              transparent 70%
+            );
+          }
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>
+        <small>Assignment 4</small>
+        Persuasive or Deceptive Visualization?
+      </h1>
+
+      <p><strong>Noah Golder</strong> — <em>ngolder@ucsd.edu</em></p>
+    </header>
+
+    <main>
+      <h2>Proposition: Throughout history, Hispanic complainants have had a higher percentage of force complaints toward police officers compared to the overall population. </h2>
+
+      <section>
+        <h3>FOR the Proposition</h3>
+
+        <figure>
+          <img src="For-1.png" alt="" />
+          <figcaption>Force Complaint Percentages Over Time (Hispanic vs Majority)</figcaption>
+        </figure>
+
+        <p>Design Decisions and Rationale:</p>
+
+        <ul>
+          <li>Decision 1: Using Majority Group as a Comparison <br>
+            Deceptive Score: 2 <br> <br>
+        
+            Majority is typically seen as the larger overall group, or rather, the ethnic majority in the population, which theoretically makes for a fine comparison. However, in the U.S., majority is actually defined as all white Americans, so I am effectively making a comparison between Hispanics and Whites, which is very deceiving. Since whites tend to have a lower force complaint percentage, this decision makes the gap between Hispanics and the majority seem larger than normal. I think it worked well because it creates a very clear trend in the visualization, but it is possible for readers to be confused by majority or question its use. I also considered using overall population or non-Hispanic population to compare, but neither showed as big of a gap.
+
+          </li> <br>
+
+          <li>Decision 2: Manipulating Y-axis Tick Scale <br>
+            Deceptive Score: .5 <br> <br>
+        
+            I only used a range from 10% to 40% on the y-axis, which amplifies the data and trend demonstrated on the visualization. If I had used a larger range, the trend would seem less apparent or diminished. I think it worked well because the data fills out the entire graph nicely. In addition, I don't believe that it is very noticeabale, or if noticeable, not seen as very deceptive. I considered using a larger range, but it would not show the data as clearly. 
+
+          </li> <br>
+          <li>Decision 3: Shading the Area between Lines <br>
+            Deceptive Score: -1 <br> <br>
+        
+             In between the two lines, I shaded the area of the plot red (when Hispanic was above Majority) and blue otherwise. This decision is earnest, since it simply communicates an already preexisting trend within the data. The red color specifically helps the graph 'pop' and can also evoke a sense of anger or caution within the audience, which helps demonstrate the point in the visualization. I did consider a different shading color, but red seems to cover all the bases here.
+
+          </li> <br>
+          Decision 4: Including Data From  2001 to 2019 <br>
+            Deceptive Score: -2 <br> <br>
+        
+             For the two visualizations, I included data from 2001 to 2019, since there were higher overall counts for complaints across these years. Overall, this decision is earnest since it uses a larger sample size. As I was reviewing visualization 1, I specifically thought about lowering the range to 2014, since the trend decreases from 2014 to 2019, but I decided that taking this data out might make the audience skeptical. Instead, I added an annotation at the top that accepts the decrease but still reinforces the overall argument.
+
+          </li> <br>
+
+          <br>
+          Decision 5: Data Transformation Note <br>
+            Deceptive Score: -2 <br> <br>
+        
+             For the note, I specifically mentioned how the data for force complaint percentage was derived. Overall, this decision is earnest because it effectively and honestly communicates a design choice to the reader, and thus, it works well. I also considered removing the annotation to keep the visual simpler, but I believe it is helpful for the reader to understand the data transformation used.
+
+          </li> <br>
+        </ul>
+      </section>
+
+      <section>
+        <h3>AGAINST the Proposition</h3>
+
+        <figure>
+          <img src="Against.png" alt="" />
+          <figcaption>Force Complaint Percentages Over Time (Hispanic vs All)</figcaption>
+        </figure>
+
+        <p>Design Decisions and Rationale:</p>
+
+        <ul>
+          <li>Decision 1: Using All Groups as a Comparison to Hispanics <br>
+            Deceptive Score: 1 <br> <br>
+        
+            Using all groups, or the overall population, as a comparison can be helpful, but it is deceptive because it is skewed by the Hispanic portion of the overall population. When comparing all groups, which includes the Hispanic population, compared to the Hispanic population itself, the gap between the two groups will be lessened because any variation in the Hispanic population will also be seen in the overall population. However, it works well to go against the proposition. I considered taking out the Hispanic population in the all groups section, but there would have been a larger gap.
+
+          </li> <br>
+          <li>Decision 2:  Average Difference Annotation <br>
+            Deceptive Score: .5 <br> <br>
+        
+            On the right side of the visualization, I included an annotation that describes the average difference between the two plots. It is a little deceptive, since I am using the phrasing 'not significant' without actually showing a p-value, but the difference is in fact very small. Overall, it helps drive the point across that the two groups are fairly similar over time. I also considered using an annotation for the max difference or the min difference, but average is more trustworthy overall.
+
+          </li> <br>
+          <li>Decision 3:   Manipulating Y-axis Tick Scale <br>
+            Deceptive Score: 1 <br> <br>
+        
+            I used the complete range from 0% to 100%, even though the actual data lies only between 10% and 40%. This decision helps further diminish any gap between the two lines, since the data is represented more narrowly. Overall, I think it works pretty well, since I moved the legend to cover up the empty space, but in comparison to the other plot, the audience may see that something is a little off. I also considered the original range, but this decision helps further demonstrate the lack of a difference between the two groups.
+
+          </li> <br>Decision 4: Using Force Complaint Percentages <br>
+          Deceptive Score: -2 <br> <br>
+      
+           For both plots, I used force complaint percentages, which is an earnest design decision. I could have used overall counts, but this data would be very deceptive to the reader, since overall counts are influenced by the overall percentage of each group within the population. This comparison would communicate a difference in overall population's submitting complaints as opposed to a trend in the force-complaints within a population, which is what the guiding question asked. Thus, this decision is very helpful to the reader.
+
+        </li> <br>
+
+        <br>Decision 5: Green and Purple Colors <br> 
+        Deceptive Score: -1 <br> <br>
+      
+           I used a different color scheme, with green and purple, as opposed to the red and blue in the first plot. This decision works well, since purple and green are more calming colors than the red used in the first plot. It helps reinforce the lack of a trend shown in the image. I considered keeping the same color scheme from above, but it would unnecessarily create caution or alert when there is no trend to be observed.
+
+        </li> <br>
+          
+        </ul>
+      </section>
+
+      <section>
+        <h2>Final Reflection</h2>
+
+        <p>
+          
+    
+
+          Overall, I found Project 2 to be challenging. Normally, we are called to make earnest design decisions that truthfully explain phenomena, so actively trying to maliciously manipulate the visualization just feels wrong. I found it interesting, however, to try and come up with different comparison groups such as Majority and All Groups, which are both deceptive in their own ways, while still trying to maintain the guise of an unbiasesd and trustworthy visualization. I was also surprised by the challenge of judging my decisions as earnest versus deceptive. For instance, changing the tick labels can be seen as earnest, as it helps readers more easily identify trends. But if used excessively, it can become a deceptive decision. <br> <br>
+
+          Now, I define ethical analysis and visualization as design decisions that are made with the intention of identifying the truth behind a certain question. My original proposition involves investigating Hispanic complaints compared to the general population. For visualization 1, I would qualify it overall as deceptive, since it is comparing Hispanics to whites, which is not directly answering the overarching question. The second visualization is less deceptive, as it does compare the overall population, albeit with some deceptive techniques. Thus, the bound between acceptable persuasive choices and misleading ones concerns the creator's adherence to the research question at stake. If the visualization decisions are made in cohesion with correctly answering the research question, they are acceptable, but if they are trying to answer a different question, or changing the intention of the question, they can be misleading. Of course, the original question can be deceptive, but that is an entirely different debate.
+          
+          
+          
+        </p>
+      </section>
+    </main>
+  </body>
+</html>
